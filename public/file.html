@@ -1,0 +1,18 @@
+<head>
+    <title>node.js实现表单上传与下载文件</title>
+    <!--
+    <script src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+
+    </script>
+-->
+</head>
+
+<body>
+    <form action="/fileupload" method="POST" enctype="multipart/form-data" onsubmit="return checkTask(this)">
+        <label for="resource">上传文档</label>
+        <input type="file" id="resource" name="resource" />
+        <button type="submit">新建任务</button>
+    </form>
+    <a href="download/kkk">下载文件</a>
+</body>

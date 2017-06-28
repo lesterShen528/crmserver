@@ -1,0 +1,32 @@
+<head>
+    <title></title>
+    <script src="jquery-1.11.1.min.js"></script>
+    <script type="text/javascript">
+        //var params = window.location.search || ""
+        function connect() {
+            $.post(
+                "http://10.10.10.10/cloudlogin",
+                {
+                    username: "test",
+                    password: "test"
+                    // mac: mac,
+                    // ip: ip
+                },
+                function (d) {
+                    if (d.status == 0) {
+                        if (typeof d.data != "undefined" && d.data.substring(0, 4) == "http") {
+                            window.location.href = d.data;
+                        } else {
+                            window.location.href = "http://www.baidu.com";
+                        }
+                    }
+                },
+                "json"
+            );
+        }
+    </script>
+</head>
+
+<body>
+    <input type="button" value="连接网络" onclick="connect()" />
+</body>
